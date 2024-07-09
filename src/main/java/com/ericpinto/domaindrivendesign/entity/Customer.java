@@ -1,11 +1,13 @@
 package com.ericpinto.domaindrivendesign.entity;
 
+import java.util.Objects;
+
 public class Customer {
 
-    private String id;
+    private final String id;
     private String name;
-    private String address;
-    private Boolean active;
+    private Address address;
+    private Boolean active = false;
 
     public Customer(String id, String name){
         this.id = id;
@@ -24,5 +26,16 @@ public class Customer {
 
     public void changeName(String name) {
         this.name = name;
+    }
+
+    public void activate(){
+        if (Objects.isNull(this.address)){
+            throw new IllegalArgumentException("Address is mandatory to activate a customer");
+        }
+        this.active = true;
+    }
+
+    public void deactivate(){
+        this.active = false;
     }
 }
