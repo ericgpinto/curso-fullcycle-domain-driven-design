@@ -11,4 +11,8 @@ public class OrderItem {
         this.name = name;
         this.price = price;
     }
+
+    public Integer getPrice() {
+        return price;
+    }
 }
