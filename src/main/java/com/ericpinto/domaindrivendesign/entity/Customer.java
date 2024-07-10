@@ -38,4 +38,8 @@ public class Customer {
     public void deactivate(){
         this.active = false;
     }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
 }
