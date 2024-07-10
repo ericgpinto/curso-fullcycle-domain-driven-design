@@ -17,7 +17,7 @@ public class Customer {
 
     private void validate() {
         if(this.name.isEmpty()){
-            throw new IllegalArgumentException("Customer is required");
+            throw new IllegalArgumentException("Customer name is required");
         }
         if (this.id.isEmpty()){
             throw new IllegalArgumentException("Customer id is required");
@@ -26,6 +26,15 @@ public class Customer {
 
     public void changeName(String name) {
         this.name = name;
+        this.validate();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Boolean isActive(){
+        return this.active;
     }
 
     public void activate(){
