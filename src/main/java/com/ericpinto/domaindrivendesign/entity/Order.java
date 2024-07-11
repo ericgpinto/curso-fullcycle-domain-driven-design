@@ -29,6 +29,10 @@ public class Order {
         if (items.isEmpty()){
             throw new IllegalArgumentException("Item quantity cannot be empty");
         }
+
+        if(this.items.stream().reduce(0, (acc, item) -> acc + item.getQuantity(), Integer::sum) <= 0){
+            throw new IllegalArgumentException("Item quantity must be greater than zero");
+        }
     }
 
     public Integer total() {

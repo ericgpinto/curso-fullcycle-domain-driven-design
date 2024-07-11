@@ -53,15 +53,28 @@ class OrderTest {
 
     @Test
     void shouldCalculateTotal (){
-        OrderItem orderItem = new OrderItem("123", "Item 1", 100);
-        OrderItem orderItem2 = new OrderItem("456", "Item 2", 200);
+        OrderItem orderItem = new OrderItem("123", "Item 1", 100, "456", 1);
+        OrderItem orderItem2 = new OrderItem("456", "Item 2", 200, "789", 3);
 
         Order order = new Order(ID, CUSTOMER_ID, List.of(orderItem));
         Order order2 = new Order(ID, CUSTOMER_ID, List.of(orderItem, orderItem2));
 
         Integer total = order2.total();
 
-        assertEquals(total, 300);
+        assertEquals(total, 700);
+    }
+
+    @Test
+    void shouldThrowIfTheItemQuantityIsLessOrEqualZero (){
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            OrderItem orderItem = new OrderItem("123", "Item 1", 100, "456", 0);
+            new Order(ID, CUSTOMER_ID, List.of(orderItem));
+        });
+
+        String actualMessage = exception.getMessage();
+
+        assertTrue(actualMessage.contains("Item quantity must be greater than zero"));
+
     }
 
 
