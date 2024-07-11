@@ -8,6 +8,7 @@ public class Customer {
     private String name;
     private Address address;
     private Boolean active = false;
+    private Integer rewardPoints = 0;
 
     public Customer(String id, String name){
         this.id = id;
@@ -29,8 +30,16 @@ public class Customer {
         this.validate();
     }
 
+    public String getId() {
+        return id;
+    }
+
     public String getName() {
         return name;
+    }
+
+    public Integer getRewardPoints() {
+        return rewardPoints;
     }
 
     public Boolean isActive(){
@@ -46,6 +55,11 @@ public class Customer {
 
     public void deactivate(){
         this.active = false;
+    }
+
+
+    public Integer addRewardPoints(Integer points){
+        return this.rewardPoints += points;
     }
 
     public void setAddress(Address address) {

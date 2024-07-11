@@ -74,6 +74,20 @@ class CustomerTest {
         assertFalse(customer.isActive());
     }
 
+    @Test
+    void shouldAddRewardPoints(){
+        Customer customer = new Customer("123", "John");
+        Customer customer2 = new Customer("456", "Chris");
+        Customer customer3 = new Customer("789", "Erick");
+
+        customer2.addRewardPoints(10);
+        customer3.addRewardPoints(20);
+
+        assertEquals(customer.getRewardPoints(), 0);
+        assertEquals(customer2.getRewardPoints(), 10);
+        assertEquals(customer3.getRewardPoints(), 20);
+    }
+
 
 
 }

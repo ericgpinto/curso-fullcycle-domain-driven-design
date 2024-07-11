@@ -1,20 +1,18 @@
 package com.ericpinto.domaindrivendesign.service;
 
+import com.ericpinto.domaindrivendesign.entity.Customer;
 import com.ericpinto.domaindrivendesign.entity.Order;
 import com.ericpinto.domaindrivendesign.entity.OrderItem;
-import com.ericpinto.domaindrivendesign.entity.Product;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Arrays;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 @SpringBootTest
 public class OrderServiceTest {
-    private static final String ID = "123";
-    private static final String NAME = "product name";
-    private static final Integer PRICE = 10;
 
     OrderItem orderItem = new OrderItem("456", "item 1", 100, "1", 1);
     OrderItem orderItem2 = new OrderItem("659", "item 1", 200, "2", 2);
@@ -30,9 +28,18 @@ public class OrderServiceTest {
     List<Order> orders = Arrays.asList(order, order2);
 
     @Test
+    void shouldPlaceAnOrder() {
+        Customer customer = new Customer("123", "Éric");
+        Order order = OrderService.placeOrder(customer, firstOrderItems);
+        assertEquals(customer.getRewardPoints(), 250);
+        assertEquals(order.total(), 500);
+    }
+
+
+    @Test
     void shouldGetTotalOfAllOrders() {
         Integer total = OrderService.total(orders);
-        Assertions.assertEquals(total, 3000);
+        assertEquals(total, 3000);
     }
 
 }
