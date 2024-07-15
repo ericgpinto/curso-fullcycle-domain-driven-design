@@ -1,10 +1,8 @@
-package com.ericpinto.domaindrivendesign.service;
+package com.ericpinto.domaindrivendesign.domain.service;
 
-import com.ericpinto.domaindrivendesign.entity.Customer;
-import com.ericpinto.domaindrivendesign.entity.Order;
-import com.ericpinto.domaindrivendesign.entity.OrderItem;
-import com.ericpinto.domaindrivendesign.entity.Product;
-import org.aspectj.weaver.ast.Or;
+import com.ericpinto.domaindrivendesign.domain.entity.Customer;
+import com.ericpinto.domaindrivendesign.domain.entity.Order;
+import com.ericpinto.domaindrivendesign.domain.entity.OrderItem;
 
 import java.util.List;
 import java.util.UUID;

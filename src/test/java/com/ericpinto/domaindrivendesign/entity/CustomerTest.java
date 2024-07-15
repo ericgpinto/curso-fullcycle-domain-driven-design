@@ -1,6 +1,9 @@
 package com.ericpinto.domaindrivendesign.entity;
 
 import static org.junit.jupiter.api.Assertions.*;
+
+import com.ericpinto.domaindrivendesign.domain.entity.Address;
+import com.ericpinto.domaindrivendesign.domain.entity.Customer;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 

@@ -1,5 +1,7 @@
 package com.ericpinto.domaindrivendesign.entity;
 
+import com.ericpinto.domaindrivendesign.domain.entity.Order;
+import com.ericpinto.domaindrivendesign.domain.entity.OrderItem;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 

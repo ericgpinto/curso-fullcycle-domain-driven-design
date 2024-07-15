@@ -1,6 +1,5 @@
-package com.ericpinto.domaindrivendesign.entity;
+package com.ericpinto.domaindrivendesign.domain.entity;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Order {

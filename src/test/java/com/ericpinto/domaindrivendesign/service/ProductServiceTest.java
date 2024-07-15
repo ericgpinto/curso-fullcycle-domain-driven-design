@@ -1,6 +1,7 @@
 package com.ericpinto.domaindrivendesign.service;
 
-import com.ericpinto.domaindrivendesign.entity.Product;
+import com.ericpinto.domaindrivendesign.domain.entity.Product;
+import com.ericpinto.domaindrivendesign.domain.service.ProductService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

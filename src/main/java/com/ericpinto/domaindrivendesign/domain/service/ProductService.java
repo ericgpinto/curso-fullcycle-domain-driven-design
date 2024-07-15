@@ -1,6 +1,6 @@
-package com.ericpinto.domaindrivendesign.service;
+package com.ericpinto.domaindrivendesign.domain.service;
 
-import com.ericpinto.domaindrivendesign.entity.Product;
+import com.ericpinto.domaindrivendesign.domain.entity.Product;
 
 import java.util.List;
 

@@ -1,8 +1,9 @@
 package com.ericpinto.domaindrivendesign.service;
 
-import com.ericpinto.domaindrivendesign.entity.Customer;
-import com.ericpinto.domaindrivendesign.entity.Order;
-import com.ericpinto.domaindrivendesign.entity.OrderItem;
+import com.ericpinto.domaindrivendesign.domain.entity.Customer;
+import com.ericpinto.domaindrivendesign.domain.entity.Order;
+import com.ericpinto.domaindrivendesign.domain.entity.OrderItem;
+import com.ericpinto.domaindrivendesign.domain.service.OrderService;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
