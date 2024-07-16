@@ -10,7 +10,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @SpringBootApplication
 @EnableJpaRepositories(basePackages="com.ericpinto.domaindrivendesign.infrastructure.repository")
-@EnableTransactionManagement
 @EntityScan(basePackages="com.ericpinto.domaindrivendesign.infrastructure.db.model")
 public class DomainDrivenDesignApplication {
 
