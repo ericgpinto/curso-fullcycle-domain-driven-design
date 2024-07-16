@@ -1,16 +1,17 @@
-package com.ericpinto.domaindrivendesign.service;
+package com.ericpinto.domaindrivendesign.domain.service;
 
 import com.ericpinto.domaindrivendesign.domain.entity.Customer;
 import com.ericpinto.domaindrivendesign.domain.entity.Order;
 import com.ericpinto.domaindrivendesign.domain.entity.OrderItem;
-import com.ericpinto.domaindrivendesign.domain.service.OrderService;
+import com.ericpinto.domaindrivendesign.domain.entity.Product;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 public class OrderServiceTest {
@@ -34,6 +35,18 @@ public class OrderServiceTest {
         Order order = OrderService.placeOrder(customer, firstOrderItems);
         assertEquals(customer.getRewardPoints(), 250);
         assertEquals(order.total(), 500);
+    }
+
+    @Test
+    void shouldThrowAnExceptionWhenItemsAreEmpty(){
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            Customer customer = new Customer("123", "Éric");
+            OrderService.placeOrder(customer, Collections.emptyList());
+        });
+
+        String actualMessage = exception.getMessage();
+
+        assertTrue(actualMessage.contains("Order must have at least one item"));
     }
 
 

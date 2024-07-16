@@ -1,4 +1,4 @@
-package com.ericpinto.domaindrivendesign.entity;
+package com.ericpinto.domaindrivendesign.domain.entity;
 
 import com.ericpinto.domaindrivendesign.domain.entity.Order;
 import com.ericpinto.domaindrivendesign.domain.entity.OrderItem;
