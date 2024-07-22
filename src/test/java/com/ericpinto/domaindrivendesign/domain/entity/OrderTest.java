@@ -76,9 +76,6 @@ class OrderTest {
         String actualMessage = exception.getMessage();
 
         assertTrue(actualMessage.contains("Item quantity must be greater than zero"));
-
     }
-
-
 
 }
