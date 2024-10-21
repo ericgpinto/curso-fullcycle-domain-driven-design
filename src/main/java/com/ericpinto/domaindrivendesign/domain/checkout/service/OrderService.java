@@ -1,5 +1,6 @@
 package com.ericpinto.domaindrivendesign.domain.checkout.service;
 
+import com.ericpinto.domaindrivendesign.domain.checkout.entity.OrderItem;
 import com.ericpinto.domaindrivendesign.domain.customer.entity.Customer;
 import com.ericpinto.domaindrivendesign.domain.checkout.entity.Order;
 
@@ -8,7 +9,7 @@ import java.util.UUID;
 
 public class OrderService {
 
-    public static Order placeOrder (Customer customer, List<Order.OrderItem> orderItems){
+    public static Order placeOrder (Customer customer, List<OrderItem> orderItems){
 
         if (orderItems.isEmpty()){
             throw new IllegalArgumentException("Order must have at least one item");

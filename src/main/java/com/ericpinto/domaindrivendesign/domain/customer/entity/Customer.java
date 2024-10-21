@@ -32,6 +32,10 @@ public class Customer {
         this.validate();
     }
 
+    public void changeAddress(Address address) {
+        this.address = address;
+    }
+
     public String getId() {
         return id;
     }
@@ -42,6 +46,10 @@ public class Customer {
 
     public Integer getRewardPoints() {
         return rewardPoints;
+    }
+
+    public Address getAddress() {
+        return address;
     }
 
     public Boolean isActive(){

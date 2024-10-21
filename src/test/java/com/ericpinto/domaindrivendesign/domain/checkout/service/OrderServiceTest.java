@@ -1,5 +1,6 @@
 package com.ericpinto.domaindrivendesign.domain.checkout.service;
 
+import com.ericpinto.domaindrivendesign.domain.checkout.entity.OrderItem;
 import com.ericpinto.domaindrivendesign.domain.customer.entity.Customer;
 import com.ericpinto.domaindrivendesign.domain.checkout.entity.Order;
 import org.junit.jupiter.api.Test;
@@ -14,13 +15,13 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 public class OrderServiceTest {
 
-    Order.OrderItem orderItem = new Order.OrderItem("456", "item 1", 100, "1", 1);
-    Order.OrderItem orderItem2 = new Order.OrderItem("659", "item 1", 200, "2", 2);
-    Order.OrderItem orderItem3 = new Order.OrderItem("156", "item 3", 300, "3", 3);
-    Order.OrderItem orderItem4 = new Order.OrderItem("789", "item 4", 400, "4", 4);
+    OrderItem orderItem = new OrderItem("456", "item 1", 100, "1", 1);
+    OrderItem orderItem2 = new OrderItem("659", "item 1", 200, "2", 2);
+    OrderItem orderItem3 = new OrderItem("156", "item 3", 300, "3", 3);
+    OrderItem orderItem4 = new OrderItem("789", "item 4", 400, "4", 4);
 
-    List<Order.OrderItem> firstOrderItems = Arrays.asList(orderItem, orderItem2);
-    List<Order.OrderItem> secondOrderItems = Arrays.asList(orderItem3, orderItem4);
+    List<OrderItem> firstOrderItems = Arrays.asList(orderItem, orderItem2);
+    List<OrderItem> secondOrderItems = Arrays.asList(orderItem3, orderItem4);
 
     Order order = new Order("123", "125", firstOrderItems);
     Order order2 = new Order("3246", "125", secondOrderItems);

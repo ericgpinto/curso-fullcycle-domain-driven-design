@@ -47,7 +47,7 @@ class CustomerTest {
     void shouldActivateCustomer(){
         Customer customer = new Customer("123", "John");
         Address address = new Address("Rua dois", "Sao Paulo", "12345-678", 2);
-        customer.setAddress(address);
+        customer.changeAddress(address);
 
         customer.activate();
 

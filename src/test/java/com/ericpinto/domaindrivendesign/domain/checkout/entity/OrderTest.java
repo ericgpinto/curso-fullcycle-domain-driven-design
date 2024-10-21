@@ -52,8 +52,8 @@ class OrderTest {
 
     @Test
     void shouldCalculateTotal (){
-        Order.OrderItem orderItem = new Order.OrderItem("123", "Item 1", 100, "456", 1);
-        Order.OrderItem orderItem2 = new Order.OrderItem("456", "Item 2", 200, "789", 3);
+        OrderItem orderItem = new OrderItem("123", "Item 1", 100, "456", 1);
+        OrderItem orderItem2 = new OrderItem("456", "Item 2", 200, "789", 3);
 
         Order order = new Order(ID, CUSTOMER_ID, List.of(orderItem));
         Order order2 = new Order(ID, CUSTOMER_ID, List.of(orderItem, orderItem2));
@@ -66,7 +66,7 @@ class OrderTest {
     @Test
     void shouldThrowIfTheItemQuantityIsLessOrEqualZero (){
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
-            Order.OrderItem orderItem = new Order.OrderItem("123", "Item 1", 100, "456", 0);
+            OrderItem orderItem = new OrderItem("123", "Item 1", 100, "456", 0);
             new Order(ID, CUSTOMER_ID, List.of(orderItem));
         });
 

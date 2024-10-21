@@ -1,12 +1,12 @@
 package com.ericpinto.domaindrivendesign.domain.product.entity;
 
-public class Product implements IProduct{
+public class ProductB implements IProduct{
 
     private String id;
     private String name;
     private Integer price;
 
-    public Product(String id, String name, Integer price) {
+    public ProductB(String id, String name, Integer price) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -28,7 +28,7 @@ public class Product implements IProduct{
     }
 
     public Integer getPrice() {
-        return price;
+        return price * 2;
     }
 
     public void changePrice(Integer price) {
