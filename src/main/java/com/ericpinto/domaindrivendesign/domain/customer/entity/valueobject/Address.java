@@ -1,5 +1,8 @@
 package com.ericpinto.domaindrivendesign.domain.customer.entity.valueobject;
 
+import lombok.Data;
+
+@Data
 public class Address {
 
     private String street = "";
