@@ -53,7 +53,7 @@ class CustomerRepositoryImplTest {
         customer.activate();
         customer.changeName("Teste");
 
-        customerRepositoryImpl.update(customer, customer.getId());
+        customerRepositoryImpl.update(customer);
 
         Assertions.assertEquals(customer.getName(), "Teste");
     }

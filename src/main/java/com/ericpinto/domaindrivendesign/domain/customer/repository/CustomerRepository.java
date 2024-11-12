@@ -8,7 +8,7 @@ import java.util.Optional;
 public interface CustomerRepository {
 
     void save(Customer customer);
-    void update(Customer customer, String id);
+    void update(Customer customer);
     Customer findById(String id);
     List<Customer> findAll();
 }

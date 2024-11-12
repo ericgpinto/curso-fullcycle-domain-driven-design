@@ -22,8 +22,8 @@ public class CustomerRepositoryImpl implements CustomerRepository {
     }
 
     @Override
-    public void update(Customer customer, String id) {
-        Customer customerFounded = findById(id);
+    public void update(Customer customer) {
+        Customer customerFounded = findById(customer.getId());
         customerJpaRepository.save(toModel(customerFounded));
     }
 
