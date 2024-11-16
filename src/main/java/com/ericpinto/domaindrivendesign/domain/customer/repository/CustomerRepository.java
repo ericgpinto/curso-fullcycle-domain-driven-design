@@ -1,10 +1,11 @@
 package com.ericpinto.domaindrivendesign.domain.customer.repository;
 
 import com.ericpinto.domaindrivendesign.domain.customer.entity.Customer;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.Optional;
 
+@Component
 public interface CustomerRepository {
 
     void save(Customer customer);

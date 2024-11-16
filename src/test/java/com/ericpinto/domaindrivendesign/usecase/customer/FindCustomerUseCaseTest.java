@@ -31,7 +31,7 @@ class FindCustomerUseCaseTest {
 
         InputFindCustomerDTO input = new InputFindCustomerDTO("123");
 
-        OutputFindCustomerDto output = findCustomerUseCase.execute(input);
+        OutputFindCustomerDTO output = findCustomerUseCase.execute(input);
 
         assertNotNull(output);
         assertEquals("123", output.id());

@@ -10,9 +10,9 @@ public class FindCustomerUseCase {
         this.customerRepository = customerRepository;
     }
 
-    public OutputFindCustomerDto execute(InputFindCustomerDTO input) {
+    public OutputFindCustomerDTO execute(InputFindCustomerDTO input) {
         Customer customer = customerRepository.findById(input.id());
-        return new OutputFindCustomerDto(
+        return new OutputFindCustomerDTO(
                 customer.getId(),
                 customer.getName(),
                 customer.getAddress()

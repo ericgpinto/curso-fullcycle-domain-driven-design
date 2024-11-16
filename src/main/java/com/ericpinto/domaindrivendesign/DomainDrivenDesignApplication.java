@@ -9,8 +9,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @SpringBootApplication
-@EnableJpaRepositories(basePackages="com.ericpinto.domaindrivendesign.infrastructure.repository")
-@EntityScan(basePackages="com.ericpinto.domaindrivendesign.infrastructure.db.model")
+@EnableJpaRepositories(basePackages="com.ericpinto.domaindrivendesign.infrastructure")
+@EntityScan(basePackages="com.ericpinto.domaindrivendesign.infrastructure")
 public class DomainDrivenDesignApplication {
 
     public static void main(String[] args) {

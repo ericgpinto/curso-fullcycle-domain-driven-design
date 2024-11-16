@@ -2,10 +2,12 @@ package com.ericpinto.domaindrivendesign.usecase.customer;
 
 import com.ericpinto.domaindrivendesign.domain.customer.entity.Customer;
 import com.ericpinto.domaindrivendesign.domain.customer.repository.CustomerRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class ListCustomerUseCase {
 
     private final CustomerRepository customerRepository;

@@ -4,9 +4,11 @@ import com.ericpinto.domaindrivendesign.domain.customer.entity.Customer;
 import com.ericpinto.domaindrivendesign.domain.customer.entity.valueobject.Address;
 import com.ericpinto.domaindrivendesign.domain.customer.repository.CustomerRepository;
 import com.ericpinto.domaindrivendesign.infrastructure.customer.model.CustomerModel;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public class CustomerRepositoryImpl implements CustomerRepository {
 
     private final CustomerJpaRepository customerJpaRepository;
