@@ -3,6 +3,7 @@ package com.ericpinto.domaindrivendesign.usecase.customer;
 import com.ericpinto.domaindrivendesign.domain.customer.entity.Customer;
 import com.ericpinto.domaindrivendesign.domain.customer.entity.valueobject.Address;
 import com.ericpinto.domaindrivendesign.domain.customer.repository.CustomerRepository;
+import com.ericpinto.domaindrivendesign.domain.shared.notification.NotificationException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -54,9 +55,9 @@ class CreateCustomerUseCaseTest {
                 123
         );
 
-        assertThrows(IllegalArgumentException.class, () -> {
+        assertThrows(NotificationException.class, () -> {
            createCustomerUseCase.execute(inputCreateCustomerDTO);
-        }, "Name is required");
+        }, "customer: Name is required");
     }
 
     @Test

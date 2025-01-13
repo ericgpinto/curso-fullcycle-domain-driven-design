@@ -1,29 +1,36 @@
 package com.ericpinto.domaindrivendesign.domain.customer.entity;
 
 import com.ericpinto.domaindrivendesign.domain.customer.entity.valueobject.Address;
+import com.ericpinto.domaindrivendesign.domain.shared.entity.Entity;
+import com.ericpinto.domaindrivendesign.domain.shared.notification.NotificationError;
+import com.ericpinto.domaindrivendesign.domain.shared.notification.NotificationException;
 
 import java.util.Objects;
 
-public class Customer {
+public class Customer extends Entity {
 
-    private final String id;
     private String name;
     private Address address;
     private Boolean active = false;
     private Integer rewardPoints = 0;
 
     public Customer(String id, String name){
+        super();
         this.id = id;
         this.name = name;
         this.validate();
+
+        if (this.notification.hasErrors()){
+            throw new NotificationException(this.notification.getErrors());
+        }
     }
 
     private void validate() {
-        if(this.name.isEmpty()){
-            throw new IllegalArgumentException("Customer name is required");
-        }
         if (this.id.isEmpty()){
-            throw new IllegalArgumentException("Customer id is required");
+            this.notification.addError(new NotificationError("Id is required", "customer"));
+        }
+        if(this.name.isEmpty()){
+            this.notification.addError(new NotificationError("Name is required", "customer"));
         }
     }
 

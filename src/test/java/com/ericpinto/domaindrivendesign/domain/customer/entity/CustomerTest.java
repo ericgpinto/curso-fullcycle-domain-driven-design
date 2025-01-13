@@ -3,6 +3,7 @@ package com.ericpinto.domaindrivendesign.domain.customer.entity;
 import static org.junit.jupiter.api.Assertions.*;
 
 import com.ericpinto.domaindrivendesign.domain.customer.entity.valueobject.Address;
+import com.ericpinto.domaindrivendesign.domain.shared.notification.NotificationException;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -11,11 +12,11 @@ class CustomerTest {
 
     @Test
     void shouldThrowErrorWhenIdIsEmpty(){
-        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+        Exception exception = assertThrows(NotificationException.class, () -> {
             new Customer("", "John");
         });
 
-        String expectedMessage = "Customer id is required";
+        String expectedMessage = "customer: Id is required";
         String actualMessage = exception.getMessage();
 
         assertTrue(actualMessage.contains(expectedMessage));
@@ -23,11 +24,11 @@ class CustomerTest {
 
     @Test
     void shouldThrowErrorWhenNameIsEmpty(){
-        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+        Exception exception = assertThrows(NotificationException.class, () -> {
             new Customer("123", "");
         });
 
-        String expectedMessage = "Customer name is required";
+        String expectedMessage = "customer: Name is required";
         String actualMessage = exception.getMessage();
 
         assertTrue(actualMessage.contains(expectedMessage));
